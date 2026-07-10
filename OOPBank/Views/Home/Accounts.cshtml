@@ -1,8 +1,8 @@
-﻿@model IEnumerable<OOPBank.Models.Account>
+﻿@model IEnumerable<BankSystem.Models.Account>
 
 @{
     ViewData["Title"] = "Accounts";
-    var customers = ViewBag.Customers as List<OOPBank.Models.Customer>;
+    var customers = ViewBag.Customers as List<BankSystem.Models.Customer>;
 }
 
 <div class="page-header">
@@ -40,7 +40,7 @@
                         <td>@item.AccountNumber</td>
                         <td>@item.Customer?.FirstName @item.Customer?.LastName</td>
                         <td>@item.AccountType</td>
-                        <td>$@item.Balance?.ToString("N2")</td>
+                        <td>AFN @item.Balance?.ToString("N2")</td>
                         <td>@interest</td>
                         <td><span class="badge active">@item.Status</span></td>
                     </tr>

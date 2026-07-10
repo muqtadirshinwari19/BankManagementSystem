@@ -1,4 +1,4 @@
-﻿namespace OOPBank.Models.OOP
+﻿namespace BankSystem.Models.OOP
 {
     public class SavingsAccount : BankAccount
     {

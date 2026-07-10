@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OOPBank.Services.Interfaces;
+using BankSystem.Services.Interfaces;
 using System.Diagnostics;
-using OOPBank.Models;
-using OOPBank.Data;
+using BankSystem.Models;
+using BankSystem.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OOPBank.Controllers
 {
@@ -41,7 +42,7 @@ namespace OOPBank.Controllers
             return RedirectToAction(nameof(Customers));
         }
         #endregion
-
+        [Authorize(Roles ="Admin")]
         #region Accounts
         public async Task<IActionResult> Accounts()
         {
@@ -91,6 +92,7 @@ namespace OOPBank.Controllers
         }
 
         #endregion
+        [Authorize(Roles = "Admin")]
 
         #region Loans
         public async Task<IActionResult> Loans()

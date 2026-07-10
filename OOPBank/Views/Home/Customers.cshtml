@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OOPBank.Models.Customer>
+﻿@model IEnumerable<BankSystem.Models.Customer>
 
 @{
     ViewData["Title"] = "Customers";
@@ -52,10 +52,87 @@
                 </tr>
             }
         </tbody>
-    </table>
+    </table><div class="modal-overlay" id="customerModal">
+        <div class="custom-modal">
+            <div class="modal-header-box">
+                <div>
+                    <h2>Add New Customer</h2>
+                    <p>Enter customer personal information.</p>
+                </div>
+
+                <button type="button" class="close-btn" onclick="closeModal('customerModal')">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <form asp-controller="Home" asp-action="AddCustomer" method="post">
+                <div class="modal-form-grid">
+                    <div>
+                        <label>First Name</label>
+                        <input name="FirstName" class="form-control" required />
+                    </div>
+
+                    <div>
+                        <label>Last Name</label>
+                        <input name="LastName" class="form-control" required />
+                    </div>
+
+                    <div>
+                        <label>Email</label>
+                        <input name="Email" type="email" class="form-control" />
+                    </div>
+
+                    <div>
+                        <label>Phone</label>
+                        <input name="Phone" class="form-control" required />
+                    </div>
+
+                    <div>
+                        <label>CNIC</label>
+                        <input name="Cnic" class="form-control" required />
+                    </div>
+
+                    <div>
+                        <label>Gender</label>
+                        <select name="Gender" class="form-control">
+                            <option value="">Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Date of Birth</label>
+                        <input name="DateOfBirth" type="date" class="form-control" />
+                    </div>
+
+                    <div>
+                        <label>City</label>
+                        <input name="City" class="form-control" />
+                    </div>
+
+                    <div class="full-input">
+                        <label>Address</label>
+                        <input name="Address" class="form-control" />
+                    </div>
+
+                    <div>
+                        <label>Country</label>
+                        <input name="Country" class="form-control" value="Pakistan" />
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" onclick="closeCustomerModal()">Cancel</button>
+                    <button type="submit" class="primary-btn">Save Customer</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
-<div class="modal-overlay" id="customerModal">
+<div class="modal" id="customerModal">
     <div class="custom-modal">
         <div class="modal-header-box">
             <div>

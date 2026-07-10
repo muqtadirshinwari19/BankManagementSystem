@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace OOPBank.Hubs
+namespace BankSystem.Hubs
 {
     public class NotificationHub : Hub
     {

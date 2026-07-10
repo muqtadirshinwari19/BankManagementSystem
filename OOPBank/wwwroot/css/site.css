@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #f5f8ff;
-    color: #07194f;
+    background: #e5ecf7;
+    color: #131315;
 }
 
 .app {
@@ -17,13 +17,16 @@ body {
 
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, #062a75, #021f55);
+    background: linear-gradient(180deg, #60708f, #7f9e98);
     color: white;
     padding: 22px 18px;
     position: fixed;
     top: 0;
-    bottom: 0;
+   
     left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .brand {
@@ -1054,7 +1057,8 @@ body {
 
 .custom-modal {
     width: 850px;
-    max-width: 100%;
+    max-width: 80%;
+    overflow-y: auto;
     background: #fff;
     border-radius: 20px;
     padding: 26px;
@@ -1092,7 +1096,7 @@ body {
 .modal-form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 7px;
 }
 
     .modal-form-grid label {

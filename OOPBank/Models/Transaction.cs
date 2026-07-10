@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OOPBank.Models;
+namespace BankSystem.Models;
 
 public partial class Transaction
 {

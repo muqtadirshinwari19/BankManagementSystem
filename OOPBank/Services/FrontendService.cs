@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.SignalR;
-using OOPBank.Services.Interfaces;
-using OOPBank.ViewModels;
-using OOPBank.Models.OOP;
-using OOPBank.Models;
-using OOPBank.Hubs;
-using OOPBank.Data;
+using BankSystem.Services.Interfaces;
+using BankSystem.ViewModels;
+using BankSystem.Models.OOP;
+using BankSystem.Models;
+using BankSystem.Hubs;
+using BankSystem.Data;
 
-namespace OOPBank.Services
+namespace BankSystem.Services
 {
     public class FrontendService : IFrontendService
     {

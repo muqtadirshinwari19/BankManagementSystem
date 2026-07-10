@@ -1,7 +1,7 @@
-﻿using OOPBank.Models;
-using OOPBank.ViewModels;
+﻿using BankSystem.Models;
+using BankSystem.ViewModels;
 
-namespace OOPBank.Services.Interfaces
+namespace BankSystem.Services.Interfaces
 {
     public interface IFrontendService
     {

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using OOPBank.Models;
+using BankSystem.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using BankSystem.Models.Identities;
 
-namespace OOPBank.Data
+namespace BankSystem.Data
 {
-    public partial class AppDbContext : DbContext
+    public partial class AppDbContext : IdentityDbContext<User,UserRole,string>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -16,7 +18,7 @@ namespace OOPBank.Data
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Loan> Loans { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+      
 
     }
 }

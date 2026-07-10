@@ -1,10 +1,10 @@
-﻿@model IEnumerable<OOPBank.Models.Loan>
+﻿@model IEnumerable<BankSystem.Models.Loan>
 
 @{
     ViewData["Title"] = "Loans";
 
-    var customers = ViewBag.Customers as List<OOPBank.Models.Customer>;
-    var loans = Model?.ToList() ?? new List<OOPBank.Models.Loan>();
+    var customers = ViewBag.Customers as List<BankSystem.Models.Customer>;
+    var loans = Model?.ToList() ?? new List<BankSystem.Models.Loan>();
 
     var totalLoans = loans.Count;
     var approvedLoans = loans.Count(x => x.LoanStatus == "Approved" || x.LoanStatus == "Active");

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<OOPBank.Models.Card>
+﻿@model IEnumerable<BankSystem.Models.Card>
 
 @{
     ViewData["Title"] = "Cards";
 
-    var customers = ViewBag.Customers as List<OOPBank.Models.Customer> ?? new List<OOPBank.Models.Customer>();
-    var cards = Model?.ToList() ?? new List<OOPBank.Models.Card>();
+    var customers = ViewBag.Customers as List<BankSystem.Models.Customer> ?? new List<BankSystem.Models.Customer>();
+    var cards = Model?.ToList() ?? new List<BankSystem.Models.Card>();
 
     var totalCards = cards.Count;
     var activeCards = cards.Count(x => x.CardStatus == "Active");

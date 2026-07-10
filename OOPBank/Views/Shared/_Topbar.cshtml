@@ -1,6 +1,7 @@
 ﻿<header class="topbar">
     <button class="menu-btn"><i class="bi bi-list"></i></button>
 
+   
     <div class="search">
         <input placeholder="Search anything..." />
         <i class="bi bi-search"></i>
@@ -9,15 +10,45 @@
     <div class="top-actions">
         <span class="notif">
             <i class="bi bi-bell"></i>
-            <b id="notificationCount">0</b>
+            <b id="notificationCount"></b>
         </span>
-        <div class="profile">
-            <div class="avatar small">A</div>
-            <div>
-                <h5>Admin User</h5>
-                <p>Administrator</p>
+        <div class="dropdown profile">
+
+            <div class="d-flex align-items-center dropdown-toggle"
+                 role="button"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                 
+                <div class="avatar small">
+                    @(User.Identity?.Name?.Substring(0, 1).ToUpper() ?? "?")
+                </div>
+
+                <div class="ms-2">
+                    <h5 class="mb-0">@User.Identity?.Name</h5>
+                    <p class="mb-0">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <p>Administrator</p>
+                        }
+
+                        @if (User.IsInRole("User"))
+                        {
+                            <p>Operation User</p>
+                        }
+
+                    </p>
+                </div>
+
+               
             </div>
-            <i class="bi bi-chevron-down"></i>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+
         </div>
-    </div>
 </header>

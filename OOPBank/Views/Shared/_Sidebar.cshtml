@@ -6,7 +6,7 @@
     <div class="brand">
         <div class="brand-icon"><i class="bi bi-bank2"></i></div>
         <div>
-            <h2>OOP Bank</h2>
+            <h2>General Bank</h2>
             <p>Management System</p>
         </div>
     </div>
@@ -14,7 +14,7 @@
     <nav class="menu">
         <a asp-controller="Home" asp-action="Index"
            class="@(currentAction == "Index" ? "active" : "")">
-            <i class="bi bi-house-fill"></i> Dashboard
+            <i class="bi bi-house-fill"></i> Home
         </a>
 
         <a asp-controller="Home" asp-action="Customers"
@@ -59,11 +59,5 @@
     </nav>
 
 
-    <div class="user-box">
-        <div class="avatar">A</div>
-        <div>
-            <h5>Admin User</h5>
-            <p>System Administrator</p>
-        </div>
-    </div>
+    
 </aside>

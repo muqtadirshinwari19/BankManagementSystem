@@ -1,6 +1,6 @@
-﻿using OOPBank.Models;
+﻿using BankSystem.Models;
 
-namespace OOPBank.ViewModels
+namespace BankSystem.ViewModels
 {
     public class FrontendView
     {

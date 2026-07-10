@@ -1,0 +1,113 @@
+﻿@model RegistrationDTO
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Create Account</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <form asp-action="Register" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text"
+                                   name="Name"
+                                   class="form-control"
+                                   placeholder="Enter username"
+                                   required />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email"
+                                   asp-for="Email"
+                                   class="form-control"
+                                   placeholder="Enter email"
+                                   required />
+                            <span asp-validation-for="Email"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="text"
+                                   name="Phone"
+                                   class="form-control"
+                                   placeholder="Enter phone number"
+                                   required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password"
+                                   name="Password"
+                                   class="form-control"
+                                   placeholder="Enter password"
+                                   required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password"
+                                   name="ConfirmPassword"
+                                   class="form-control"
+                                   placeholder="Confirm password"
+                                   required />
+                        </div>
+                        <div class="form-field flex">
+                            <div class="w-25">
+                                <label asp-for="UserType">User Types</label>
+                            </div>
+                            <div class="w-25">
+                                <label asp-for="UserType">User</label>
+                                <input type="radio" asp-for="UserType" id="User" value="User" checked />
+                            </div>
+                            <div class="w-25">
+                                <label asp-for="UserType">Admin</label>
+                                <input type="radio" asp-for="UserType" id="Admin" value="Admin" />
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                Register
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="card-footer text-center">
+                    Already have an account?
+                    <a asp-action="Login">Login</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

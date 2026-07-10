@@ -1,4 +1,4 @@
-﻿@model OOPBank.ViewModels.FrontendView
+﻿@model BankSystem.ViewModels.FrontendView
 
 @{
     ViewData["Title"] = "Dashboard";
@@ -8,8 +8,8 @@
 
 <div class="welcome-row">
     <div>
-        <h1>Welcome back, Admin!</h1>
-        <p>Here's what's happening with your bank today.</p>
+        <h1>Welcome to Bank Platform!</h1>
+        <p>Here will capture all things happining in the Bank.</p>
     </div>
 
     <div class="date-box">
@@ -22,7 +22,7 @@
     <div class="stat-card purple">
         <div class="stat-icon"><i class="bi bi-people"></i></div>
         <div>
-            <p>Total Customers</p>
+            <p><b>Total Customers</b></p>
             <h3>@Model.TotalCustomers</h3>
             <small>Live database count</small>
         </div>
@@ -31,7 +31,7 @@
     <div class="stat-card blue">
         <div class="stat-icon"><i class="bi bi-wallet2"></i></div>
         <div>
-            <p>Total Accounts</p>
+            <p><b>Total Accounts in The Bank</b></p>
             <h3>@Model.TotalAccounts</h3>
             <small>Savings and Current accounts</small>
         </div>
@@ -40,7 +40,7 @@
     <div class="stat-card green">
         <div class="stat-icon"><i class="bi bi-currency-dollar"></i></div>
         <div>
-            <p>Total Balance</p>
+            <p><b>Total Balance</b></p>
             <h3>$@Model.TotalBalance.ToString("N2")</h3>
             <small>Across all accounts</small>
         </div>
@@ -49,7 +49,7 @@
     <div class="stat-card orange">
         <div class="stat-icon"><i class="bi bi-safe2"></i></div>
         <div>
-            <p>Total Transactions</p>
+            <p><b>Total Transactions</b></p>
             <h3>@Model.TotalTransactions</h3>
             <small>Deposit, withdraw and transfer</small>
         </div>

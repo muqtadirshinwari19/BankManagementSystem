@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OOPBank.Models.Transaction>
+﻿@model IEnumerable<BankSystem.Models.Transaction>
 
 @{
     ViewData["Title"] = "Transactions";
@@ -40,7 +40,7 @@
                         <td>@item.TransactionType</td>
                         <td>@item.Account?.AccountNumber</td>
                         <td>@item.Account?.Customer?.FirstName @item.Account?.Customer?.LastName</td>
-                        <td class="@amountClass">@amountSign$@item.Amount.ToString("N2")</td>
+                        <td class="@amountClass">@amountSign AFN @item.Amount.ToString("N2")</td>
                         <td>@item.TransactionDate?.ToString("MMM dd, yyyy")</td>
                         <td>@item.Description</td>
                     </tr>
