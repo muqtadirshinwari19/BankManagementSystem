@@ -3,7 +3,7 @@
 
 # 🏦 OOP Bank Management System
 
-A modern **Bank Management System** built using **ASP.NET Core MVC**, **Entity Framework Core**, **SQL Server**, **SignalR**, and **Object-Oriented Programming (OOP)** principles.
+A modern **Bank Management System** built using **ASP.NET Core MVC**, **Entity Framework Core**, **SQL Server**,  and **Object-Oriented Programming (OOP)** principles.
 
 This project was developed as a portfolio project to demonstrate enterprise-level architecture, CRUD operations, real-time notifications, layered design, and clean coding practices.
 
