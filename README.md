@@ -193,14 +193,6 @@ Same method call executes different implementations depending on the object type
 
 ---
 
-# 🔔 SignalR
-
-This project includes SignalR for real-time notifications.
-
-Whenever a transaction occurs, connected users receive an instant notification without refreshing the page.
-
----
-
 # 📊 Database
 
 SQL Server Database
@@ -272,11 +264,8 @@ dotnet run
 ---
 
 # 📈 Future Improvements
-
-- Authentication & Authorization
 - Email Notifications
 - PDF Reports
-- Role Management
 - Account Statements
 - Interest Automation
 - ATM Simulation
@@ -284,15 +273,7 @@ dotnet run
 
 ---
 
-# 👨‍💻 Developer
+Developer
 
-**Abdul Kabeer Mughal**
+Muqtadir Shinwari
 
-ASP.NET Core Developer
-
-GitHub:
-https://github.com/AbdulKabeerMughal
-
----
-
-⭐ If you like this project, don't forget to star the repository.
