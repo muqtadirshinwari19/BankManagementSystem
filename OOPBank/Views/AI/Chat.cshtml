@@ -1,0 +1,47 @@
+﻿@model BankSystem.Models.AI.ChatViewModel
+
+@{
+    ViewData["Title"] = "Bank AI Assistant";
+}
+
+<h2>Bank AI Assistant</h2>
+
+<div>
+
+    @foreach (var chat in Model.Messages)
+    {
+        if (chat.Role == "user")
+        {
+            <div>
+                <strong>You:</strong>
+                <p>@chat.Content</p>
+            </div>
+        }
+        else
+        {
+            <div>
+                <strong>AI Assistant:</strong>
+                <p>@chat.Content</p>
+            </div>
+        }
+
+        <hr />
+    }
+
+</div>
+
+<form asp-action="Chat" method="post">
+
+    <div>
+        <input asp-for="Message"
+               placeholder="Ask something about the bank..."
+               required />
+    </div>
+
+    <br />
+
+    <button type="submit">
+        Send
+    </button>
+
+</form>

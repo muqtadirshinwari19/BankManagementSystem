@@ -7,8 +7,18 @@ using BankSystem.Services.Interfaces;
 using BankSystem.Models.Identities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using BankSystem.Models.AI;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient();
+builder.Services.Configure<OpenAISettings>(
+    builder.Configuration.GetSection("OpenAI")
+);
+builder.Services.AddScoped<AIService>();
+builder.Services.AddScoped<KnowledgeService>();
+builder.Services.AddScoped<KnowledgeChunkService>();
+builder.Services.AddScoped<PdfDocumentService>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddIdentity<User, UserRole>().AddEntityFrameworkStores<AppDbContext>().AddUserStore<UserStore<User, UserRole, AppDbContext, string>>().
     AddRoleStore<RoleStore<UserRole, AppDbContext, string>>();
@@ -41,4 +51,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(name: "default",pattern: "{controller=Account}/{action=Index}/{id?}");
 app.MapHub<NotificationHub>("/notificationHub");
+
 app.Run();

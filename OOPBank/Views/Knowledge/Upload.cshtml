@@ -1,0 +1,57 @@
+﻿@model BankSystem.Models.AI.KnowledgeUploadViewModel
+
+@{
+    ViewData["Title"] = "Upload Knowledge Document";
+}
+
+<h2>Upload Bank Knowledge Document</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+<form asp-action="Upload"
+      method="post"
+      enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label asp-for="Title"></label>
+
+        <input asp-for="Title"
+               class="form-control" />
+
+        <span asp-validation-for="Title"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Category"></label>
+
+        <input asp-for="Category"
+               class="form-control" />
+
+        <span asp-validation-for="Category"
+              class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="File"></label>
+
+        <input asp-for="File"
+               type="file"
+               accept=".pdf"
+               class="form-control" />
+
+        <span asp-validation-for="File"
+              class="text-danger"></span>
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+        Upload PDF
+    </button>
+
+</form>

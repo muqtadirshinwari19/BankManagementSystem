@@ -6,7 +6,7 @@ using BankSystem.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using OOPBank.Controllers;
+using BankSystem.Controllers;
 
 namespace BankSystem.Controllers
 {

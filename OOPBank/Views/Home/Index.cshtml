@@ -1,5 +1,15 @@
 ﻿@model BankSystem.ViewModels.FrontendView
 
+
+
+<div class="text mt-4">
+    <a asp-controller="AI"
+       asp-action="Chat"
+       class="btn btn-primary btn-lg">
+        💬 Ask Bank Assistant
+    </a>
+</div>
+
 @{
     ViewData["Title"] = "Dashboard";
 
@@ -27,6 +37,7 @@
             <small>Live database count</small>
         </div>
     </div>
+    
 
     <div class="stat-card blue">
         <div class="stat-icon"><i class="bi bi-wallet2"></i></div>

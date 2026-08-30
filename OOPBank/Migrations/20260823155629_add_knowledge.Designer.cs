@@ -4,6 +4,7 @@ using BankSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260823155629_add_knowledge")]
+    partial class add_knowledge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace BankSystem.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BankSystem.Models.AI.ChattMessage", b =>
+            modelBuilder.Entity("BankSystem.Models.AI.ChatMessage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,34 +74,6 @@ namespace BankSystem.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Conversations");
-                });
-
-            modelBuilder.Entity("BankSystem.Models.AI.KnowledgeChunk", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ChunkIndex")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("KnowledgeDocumentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("KnowledgeDocumentId");
-
-                    b.ToTable("KnowledgeChunks");
                 });
 
             modelBuilder.Entity("BankSystem.Models.AI.KnowledgeDocument", b =>
@@ -518,7 +493,7 @@ namespace BankSystem.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BankSystem.Models.AI.ChattMessage", b =>
+            modelBuilder.Entity("BankSystem.Models.AI.ChatMessage", b =>
                 {
                     b.HasOne("BankSystem.Models.AI.Conversation", "Conversation")
                         .WithMany("Messages")
@@ -538,17 +513,6 @@ namespace BankSystem.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BankSystem.Models.AI.KnowledgeChunk", b =>
-                {
-                    b.HasOne("BankSystem.Models.AI.KnowledgeDocument", "KnowledgeDocument")
-                        .WithMany("Chunks")
-                        .HasForeignKey("KnowledgeDocumentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("KnowledgeDocument");
                 });
 
             modelBuilder.Entity("BankSystem.Models.Account", b =>
@@ -649,11 +613,6 @@ namespace BankSystem.Migrations
             modelBuilder.Entity("BankSystem.Models.AI.Conversation", b =>
                 {
                     b.Navigation("Messages");
-                });
-
-            modelBuilder.Entity("BankSystem.Models.AI.KnowledgeDocument", b =>
-                {
-                    b.Navigation("Chunks");
                 });
 
             modelBuilder.Entity("BankSystem.Models.Account", b =>

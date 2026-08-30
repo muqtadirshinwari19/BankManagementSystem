@@ -6,7 +6,7 @@ using BankSystem.Models;
 using BankSystem.Data;
 using Microsoft.AspNetCore.Authorization;
 
-namespace OOPBank.Controllers
+namespace BankSystem.Controllers
 {
     public class HomeController : Controller
     {
