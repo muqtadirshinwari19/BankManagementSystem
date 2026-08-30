@@ -58,7 +58,7 @@ This project was developed as a portfolio project to demonstrate enterprise-leve
 - Card Status
 - Expiry Date
 
-  ##🔐 Security
+  ##     Security
 -User authentication and authorization
 -Protected banking pages
 -Secure configuration management
@@ -79,7 +79,7 @@ This project was developed as a portfolio project to demonstrate enterprise-leve
 - SignalR Integration
 - Live Notification System
 
-  ##🤖 AI Bank Assistant
+  ## AI Bank Assistant 🤖
 -AI-powered conversational assistant for answering banking-related questions
 -Provides users with information about bank services, savings accounts, loans, and policies
 -Knowledge-base powered question answering using uploaded banking documents
