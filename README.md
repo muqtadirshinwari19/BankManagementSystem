@@ -58,6 +58,12 @@ This project was developed as a portfolio project to demonstrate enterprise-leve
 - Card Status
 - Expiry Date
 
+  ##🔐 Security
+-User authentication and authorization
+-Protected banking pages
+-Secure configuration management
+-API credentials kept outside publicly accessible source code
+
 ## Reports
 - Financial Summary
 - Customer Report
@@ -72,6 +78,22 @@ This project was developed as a portfolio project to demonstrate enterprise-leve
 ## Real-Time Notifications
 - SignalR Integration
 - Live Notification System
+
+  ##🤖 AI Bank Assistant
+-AI-powered conversational assistant for answering banking-related questions
+-Provides users with information about bank services, savings accounts, loans, and policies
+-Knowledge-base powered question answering using uploaded banking documents
+-Retrieves relevant information from the bank's knowledge base before generating responses
+-Supports natural-language questions instead of requiring users to search through documents manually
+-Dedicated chat interface for interacting with the AI Bank Assistant
+
+📚 Knowledge Management
+-Upload banking documents and policies to the system
+-Store and manage documents used as the AI assistant's knowledge source
+-Process documents into searchable knowledge content
+-Retrieve relevant information based on user questions
+-Helps keep AI responses focused on the bank's available information
+
 
 ---
 
